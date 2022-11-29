@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    <title>ALP - Tecnologia | Escales</title>
+
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #fff;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        header {
+            color: #fff;
+            background:#00acd7;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999px;
+            box-shadow: 5px 5px 15px black;
+        }
+        
+        footer{
+            padding: auto;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #00acd7;
+            color: white;
+            text-align: center;
+            box-shadow: 5px 5px 15px black;
+        }
+
+        .home{
+            border: 30px solid transparent;
+            background-color: rgba(234, 240, 244, 0.831);
+    }
+
+    </style>
+</head>
+
+<header>
+    <h1>Music Escales</h1>
+</header>
+
+<body>
+
+    <section class="home">
+    <script>
+        var nome_autor =  window.prompt('Nome do criador da escala:')
+        var nome_ministro = window.prompt('Nome do ministro:')
+        var nome_ev = window.prompt('Nome do evento')
+        var dia_ev = Number (window.prompt('Dia do evento'))
+        var mes_ev = Number (window.prompt('Mês do evento'))
+        var ano_ev = Number (window.prompt('Ano do evento'))
+        // Solicitações
+
+        window.confirm('No momento só listamos no máximo 5 musicas. Caso não tenha o máximo de 5 musicas para esse dia do evento, apenas aperte ok até finalizar.') //Recado na hora de informar as musicas
+
+        
+        var music1 = window.prompt('Musica 1')
+        var music2 = window.prompt('Musica 2')
+        var music3 = window.prompt('Musica 3')
+        var music4 = window.prompt('Musica 4')
+        var music5 = window.prompt('Musica 5')
+        // Parte da solicitação das musicas
+        document.write(`<h2>Musicas do ${nome_ev}</h2>`) //Titulo do evento mostrado na tela
+        document.write(`Data do evento: ${dia_ev}/${mes_ev}/${ano_ev}</br>`)
+        document.write(`<hr>`)
+
+        document.write(`Autor da escala: ${nome_autor}</br>`)
+        document.write(`Ministro: ${nome_ministro}</br>`)
+        document.write(`<hr>`)
+
+        //chamando as musicas na tela
+
+        document.write(`<h4> * ${music1} </h4>`)
+        document.write(`<h4> * ${music2} </h4>`)
+        document.write(`<h4> * ${music3} </h4>`)
+        document.write(`<h4> * ${music4} </h4>`)
+        document.write(`<h4> * ${music5} </h4>`)
+        document.write(`<hr>`)
+    </script>
+    </section>
+</body>
+
+    <footer>
+        <p>&copy; Todos os direitos reservados</p>
+        <p>ALP - Tecnologia</p>
+    </footer>
+</html>
