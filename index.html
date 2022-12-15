@@ -42,7 +42,7 @@
         .home{
             border: 30px solid transparent;
             background-color: rgba(234, 240, 244, 0.831);
-    }
+        }
 
     </style>
 </head>
@@ -52,44 +52,61 @@
 </header>
 
 <body>
-
     <section class="home">
-    <script>
-        var nome_autor =  window.prompt('Nome do criador da escala:')
-        var nome_ministro = window.prompt('Nome do ministro:')
-        var nome_ev = window.prompt('Nome do evento')
-        var dia_ev = Number (window.prompt('Dia do evento'))
-        var mes_ev = Number (window.prompt('Mês do evento'))
-        var ano_ev = Number (window.prompt('Ano do evento'))
-        // Solicitações
 
-        window.confirm('No momento só listamos no máximo 5 musicas. Caso não tenha o máximo de 5 musicas para esse dia do evento, apenas aperte ok até finalizar.') //Recado na hora de informar as musicas
+        <input type="text" name="autor1" id="autor1" placeholder="Autor">
+        <br><br>
+        <input type="text" name="ministro" id="ministro" placeholder="Ministro">
+        <br><br>
+        <input type="text" name="evento" id="evento" placeholder="Nome do evento">
+        <br><br>
+        <p>Data do evento</p>
+        <input type="date" name="dataev" id="dataev" placeholder="Data do evento">
+        <h3>No momento só é permitido 5 musicas.</h3>
 
+        <input type="text" name="music1" id="music1" placeholder="1 - Musica">
+        <br>
+        <input type="text" name="music2" id="music2" placeholder="2 - Musica">
+        <br>
+        <input type="text" name="music3" id="music3" placeholder="3 - Musica">
+        <br>
+        <input type="text" name="music4" id="music4" placeholder="4 - Musica">
+        <br>
+        <input type="text" name="music5" id="music5" placeholder="5 - Musica">
+        <br><br><br>
+        <input type="button" value="Gerar Escala" onclick="gerar()">
+        <div id="result"></div>
         
-        var music1 = window.prompt('Musica 1')
-        var music2 = window.prompt('Musica 2')
-        var music3 = window.prompt('Musica 3')
-        var music4 = window.prompt('Musica 4')
-        var music5 = window.prompt('Musica 5')
-        // Parte da solicitação das musicas
-        document.write(`<h2>Musicas do ${nome_ev}</h2>`) //Titulo do evento mostrado na tela
-        document.write(`Data do evento: ${dia_ev}/${mes_ev}/${ano_ev}</br>`)
-        document.write(`<hr>`)
 
-        document.write(`Autor da escala: ${nome_autor}</br>`)
-        document.write(`Ministro: ${nome_ministro}</br>`)
-        document.write(`<hr>`)
+    <script>
+function gerar (){
+    var auto = window.document.getElementById('autor1').value
+    var ministro = window.document.getElementById('ministro').value
+    var evento = window.document.getElementById('evento').value
+    var dataev = window.document.getElementById('dataev').value
+    
+    var music1 = window.document.getElementById('music1').value
+    var music2 = window.document.getElementById('music2').value
+    var music3 = window.document.getElementById('music3').value
+    var music4 = window.document.getElementById('music4').value
+    var music5 = window.document.getElementById('music5').value
 
-        //chamando as musicas na tela
+    var result = window.document.getElementById('result')
+    
+    result.innerText = ` \n\n\n Autor: ${auto} \n Ministro: ${ministro} \n Evento: ${evento}  \n Data do evento: ${dataev} \n\n Musicas: \n 1° ${music1} \n 2° ${music2} \n 3° ${music3} \n 4° ${music4} \n 5° ${music5}`
 
-        document.write(`<h4> * ${music1} </h4>`)
-        document.write(`<h4> * ${music2} </h4>`)
-        document.write(`<h4> * ${music3} </h4>`)
-        document.write(`<h4> * ${music4} </h4>`)
-        document.write(`<h4> * ${music5} </h4>`)
-        document.write(`<hr>`)
+
+   
+
+   
+
+
+}
+
     </script>
     </section>
+
+    
 </body>
 
     <footer>
