@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
-    <title>ALP - Tecnologia | Escales</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+        <title>ALP - Tecnologia | Escales</title>
 
     <style>
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: #fff;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        header {
-            color: #fff;
-            background:#00acd7;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999px;
-            box-shadow: 5px 5px 15px black;
-        }
-        
-        footer{
-            padding: auto;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #00acd7;
-            color: white;
-            text-align: center;
-            box-shadow: 5px 5px 15px black;
-        }
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                background: #fff;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
 
         .home{
             border: 30px solid transparent;
             background-color: rgba(234, 240, 244, 0.831);
         }
 
-    </style>
+        input {
+        color: black;
+        border-right-color:#f9fdfe;
+        border-left-color:#e4f4f8;
+        border-top-color:#e4f4f8;
+        background-color: #e4f4f8;
+        border-bottom-color:#e4f4f8;
+            font:italic bold 15px/1 helvetica ;
+            border-radius: 25px 25px 25px 25px;
+            width: 100%;
+            padding: 8x 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+    }
+
+    input[type=button]{
+        font: small-caps bold 24px/1 sans-serif;
+        border-right-color:#00acd7;
+        border-left-color:#00acd7;
+        border-top-color:#00acd7;
+        background-color: #00acd7;
+        border-bottom-color:#00acd7;
+        border-radius: 25px 25px 25px 25px;
+        color: white;
+        padding: 16px 32px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    #result{
+
+    }
+    </style>   
 </head>
 
-<header>
-    <h1>Music Escales</h1>
-</header>
-
 <body>
+
     <section class="home">
 
         <input type="text" name="autor1" id="autor1" placeholder="Autor">
@@ -74,43 +81,31 @@
         <br>
         <input type="text" name="music5" id="music5" placeholder="5 - Musica">
         <br><br><br>
-        <input type="button" value="Gerar Escala" onclick="gerar()">
-        <div id="result"></div>
+        <input type="button" value="GERAR ESCALA" onclick="gerar()">
         
-
-    <script>
-function gerar (){
-    var auto = window.document.getElementById('autor1').value
-    var ministro = window.document.getElementById('ministro').value
-    var evento = window.document.getElementById('evento').value
-    var dataev = window.document.getElementById('dataev').value
-    
-    var music1 = window.document.getElementById('music1').value
-    var music2 = window.document.getElementById('music2').value
-    var music3 = window.document.getElementById('music3').value
-    var music4 = window.document.getElementById('music4').value
-    var music5 = window.document.getElementById('music5').value
-
-    var result = window.document.getElementById('result')
-    
-    result.innerText = ` \n\n\n Autor: ${auto} \n Ministro: ${ministro} \n Evento: ${evento}  \n Data do evento: ${dataev} \n\n Musicas: \n 1° ${music1} \n 2° ${music2} \n 3° ${music3} \n 4° ${music4} \n 5° ${music5}`
+        <div id="result"></div>
 
 
-   
-
-   
-
-
-}
-
-    </script>
     </section>
 
-    
-</body>
+    <script>
+        function gerar (){
+            var auto = window.document.getElementById('autor1').value
+            var ministro = window.document.getElementById('ministro').value
+            var evento = window.document.getElementById('evento').value
+            var dataev = window.document.getElementById('dataev').value
+            
+            var music1 = window.document.getElementById('music1').value
+            var music2 = window.document.getElementById('music2').value
+            var music3 = window.document.getElementById('music3').value
+            var music4 = window.document.getElementById('music4').value
+            var music5 = window.document.getElementById('music5').value
 
-    <footer>
-        <p>&copy; Todos os direitos reservados</p>
-        <p>ALP - Tecnologia</p>
-    </footer>
+            var result = window.document.getElementById('result')
+            
+            result.innerText = ` \n\n\n Autor: ${auto} \n\n Ministro: ${ministro} \n\n Evento: ${evento}  \n\n Data do evento: ${dataev} \n\n Musicas: \n 1° ${music1} \n 2° ${music2} \n 3° ${music3} \n 4° ${music4} \n 5° ${music5}`
+            
+}
+    </script>
+</body>
 </html>
