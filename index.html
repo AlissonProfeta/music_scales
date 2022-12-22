@@ -76,7 +76,8 @@
             var ministro = window.document.getElementById('ministro').value
             var evento = window.document.getElementById('evento').value
             var dataev = window.document.getElementById('dataev').value
-            
+            data = new Date(dataev);
+            dataFormatada = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
             var music1 = window.document.getElementById('music1').value
             var music2 = window.document.getElementById('music2').value
             var music3 = window.document.getElementById('music3').value
@@ -85,7 +86,7 @@
 
             var result = window.document.getElementById('result')
             
-            result.innerHTML = `<hr> <strong>Autor:</strong> ${auto} <br> <strong>Ministro:</strong> ${ministro} <br> <strong>Evento:</strong> ${evento}  <br> <strong>Data do evento:</strong> ${dataev} <hr><br> <center><h5><i><u>MÚSICAS</u></i></h5></center> <strong>1°-</strong> ${music1} <br> <strong>2°-</strong> ${music2} <br> <strong>3°-</strong> ${music3} <br> <strong>4°-</strong> ${music4} <br> <strong>5°-</strong> ${music5}`}
+            result.innerHTML = `<hr> <strong>Autor:</strong> ${auto} <br> <strong>Ministro:</strong> ${ministro} <br> <strong>Evento:</strong> ${evento}  <br> <strong>Data do evento:</strong> ${dataFormatada} <hr><br> <center><h5><i><u>MÚSICAS</u></i></h5></center> <strong>1°-</strong> ${music1} <br> <strong>2°-</strong> ${music2} <br> <strong>3°-</strong> ${music3} <br> <strong>4°-</strong> ${music4} <br> <strong>5°-</strong> ${music5}`}
     </script>
 
     <!-- JavaScript BOOTSTRAP 5 -->
