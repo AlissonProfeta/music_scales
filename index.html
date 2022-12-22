@@ -1,93 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+
+<!--INICIO DO HEAD-->
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, inicial-scale=1.0">
         <title>ALP - Tecnologia | Escales</title>
+        <link rel="stylesheet" href="style.css">
 
-    <style>
-            body{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-                background: #fff;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            }
+        <!-- LINK CSS BOOSTRAP 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-        .home{
-            border: 30px solid transparent;
-            background-color: rgba(234, 240, 244, 0.831);
-        }
-
-        input {
-        color: black;
-        border-right-color:#f9fdfe;
-        border-left-color:#e4f4f8;
-        border-top-color:#e4f4f8;
-        background-color: #e4f4f8;
-        border-bottom-color:#e4f4f8;
-            font:italic bold 15px/1 helvetica ;
-            border-radius: 25px 25px 25px 25px;
-            width: 100%;
-            padding: 8x 8px;
-            margin: 8px 0;
-            box-sizing: border-box;
-    }
-
-    input[type=button]{
-        font: small-caps bold 24px/1 sans-serif;
-        border-right-color:#00acd7;
-        border-left-color:#00acd7;
-        border-top-color:#00acd7;
-        background-color: #00acd7;
-        border-bottom-color:#00acd7;
-        border-radius: 25px 25px 25px 25px;
-        color: white;
-        padding: 16px 32px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
-
-    #result{
-
-    }
-    </style>   
 </head>
+<!--FIM INICIO DO HEAD-->
 
+<!-- INICIO DO BODY -->
 <body>
+    <!--TOPO DA PÁGINA-->
+    <nav class="navbar navbar-light shadow p-3 mb-5 bg-body rounded">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="a.png.png" alt="" width="50" height="24" class="d-inline-block align-text-top">
+        </a>    
+        <h3>ALP - Tecnologias WEB</h3>
+        </div>
+    </nav>
+    <!--FIM TOPO-->
 
-    <section class="home">
+    <!-- HOME E FORMULÁRIO -->
+    <div class="home1">
+        <div class="shadow-lg p-3 mb-5 bg-body rounded">
+            <section class="home">
+                <input type="text" name="autor1" id="autor1" placeholder="Autor">
+                <br><br>
+                <input type="text" name="ministro" id="ministro" placeholder="Ministro">
+                <br><br>
+                <input type="text" name="evento" id="evento" placeholder="Nome do evento">
+                <br><br>
+                <p>Data do evento</p>
+                <input type="date" name="dataev" id="dataev" placeholder="Data do evento">
+                <br><br>
+                <h5>No momento só é permitido 5 músicas.</h5>
+                <br><br>
+                <input type="text" name="music1" id="music1" placeholder="1 - Musica">
+                <br><br>
+                <input type="text" name="music2" id="music2" placeholder="2 - Musica">
+                <br><br>
+                <input type="text" name="music3" id="music3" placeholder="3 - Musica">
+                <br><br>
+                <input type="text" name="music4" id="music4" placeholder="4 - Musica">
+                <br><br>
+                <input type="text" name="music5" id="music5" placeholder="5 - Musica">
+                <br><br><br>
+                <input type="button" value="GERAR ESCALA" onclick="gerar()"><!--Func. que gera a escala-->
+                <div id="result"></div>
+            </section>
+        </div>  
+    </div>
+    <!-- FIM HOME E FORMULÁRIO -->
 
-        <input type="text" name="autor1" id="autor1" placeholder="Autor">
-        <br><br>
-        <input type="text" name="ministro" id="ministro" placeholder="Ministro">
-        <br><br>
-        <input type="text" name="evento" id="evento" placeholder="Nome do evento">
-        <br><br>
-        <p>Data do evento</p>
-        <input type="date" name="dataev" id="dataev" placeholder="Data do evento">
-        <h3>No momento só é permitido 5 musicas.</h3>
+    <!-- INICIO RODAPÉ -->
+    <footer class="footer mt-auto py-3 shadow-lg style">
+        <div class="container">
+        <center><span class="text-muted">&copy ALP - Tecnologias WEB 2022</span></center>
+        </div>
+    </footer>
+    <!-- FIM RODAPÉ -->
 
-        <input type="text" name="music1" id="music1" placeholder="1 - Musica">
-        <br>
-        <input type="text" name="music2" id="music2" placeholder="2 - Musica">
-        <br>
-        <input type="text" name="music3" id="music3" placeholder="3 - Musica">
-        <br>
-        <input type="text" name="music4" id="music4" placeholder="4 - Musica">
-        <br>
-        <input type="text" name="music5" id="music5" placeholder="5 - Musica">
-        <br><br><br>
-        <input type="button" value="GERAR ESCALA" onclick="gerar()">
-        
-        <div id="result"></div>
-
-
-    </section>
-
+    <!-- JavaScript PARA GERAR A ESCALA -->
     <script>
         function gerar (){
             var auto = window.document.getElementById('autor1').value
@@ -103,9 +85,11 @@
 
             var result = window.document.getElementById('result')
             
-            result.innerText = ` \n\n\n Autor: ${auto} \n\n Ministro: ${ministro} \n\n Evento: ${evento}  \n\n Data do evento: ${dataev} \n\n Musicas: \n 1° ${music1} \n 2° ${music2} \n 3° ${music3} \n 4° ${music4} \n 5° ${music5}`
-            
-}
+            result.innerHTML = `<hr> <strong>Autor:</strong> ${auto} <br> <strong>Ministro:</strong> ${ministro} <br> <strong>Evento:</strong> ${evento}  <br> <strong>Data do evento:</strong> ${dataev} <hr><br> <center><h5><i><u>MÚSICAS</u></i></h5></center> <strong>1°-</strong> ${music1} <br> <strong>2°-</strong> ${music2} <br> <strong>3°-</strong> ${music3} <br> <strong>4°-</strong> ${music4} <br> <strong>5°-</strong> ${music5}`}
     </script>
+
+    <!-- JavaScript BOOTSTRAP 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
+<!-- FIM DO BODY -->
 </html>
